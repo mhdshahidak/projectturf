@@ -1,0 +1,83 @@
+body{
+    padding: 0;
+    margin: 0;
+    /* background: url("../static/mountains.jpg")no-repeat; */
+    background-size: cover;
+}
+
+.form{
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    z-index: 1;
+    background:#FAFAFA;
+    opacity: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 200px auto 100px;
+    padding: 10px 45px 30px 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 15px;
+
+}
+
+.form p{
+    font-size: 15px;
+    padding: 1px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.form input{
+    outline: 0;
+    border-radius: 10px;
+    background-color:#EBF7F2 ;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form input:hover{
+   background-color:#EBF7F2 ;
+   transition: all 1s ease 0s;
+}
+
+.form input:focus{
+    background-color:#EBF7F2 ;
+    transition: all 1s ease 0s;
+}
+
+.form button{
+    text-transform: uppercase;
+    outline: 0;
+    border-radius: 10px;
+    background-color:#010e0d;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #f56d6d;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus{
+    background-color: #ee4e4e;
+    transition: all 1s ease 0s;
+
+}
+
+.form .message{
+    margin: 15px 0 0;
+    color: #A8A9A9;
+    font-size: 12px;
+
+}
+
+.form .message a{
+    color: #05CABE;
+    text-decoration: none;
+}

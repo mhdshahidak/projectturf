@@ -1,0 +1,22 @@
+.page1{
+    background-color: rgb(43, 39, 39);
+    
+}
+.page2{
+    background-color: black;
+}
+p{
+    color: blanchedalmond;
+}
+
+.log{
+    text-transform: uppercase;
+    text-decoration: none
+    
+        
+      
+    
+}
+/* button:hover {
+    background-color: rgb(80, 74, 74);
+  } */
