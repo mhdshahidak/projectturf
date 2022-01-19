@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 <link href="../../static/signup.css" rel="stylesheet">
+<script src="/static/login.js"></script>
 
 
 
@@ -19,9 +20,7 @@
 </head>
 <body>
 
-    <!-- <div class="container">
-        <br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
-        <hr> -->
+   
 
         <div class="card bg-light">
             <article class="card-body mx-auto" style="max-width: 400px;">
@@ -34,57 +33,48 @@
                 <p class="divider-text">
                     <span class="bg-light">OR</span>
                 </p>
-                <form>
+                <form method="get" action="" >
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                      </div>
-                    <input name="" class="form-control" placeholder="Full name" type="text">
+                    <input name="" class="form-control" placeholder="Full name" type="text" id="fullname">
+                    <span id="name_err"></span>
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                      </div>
-                    <input name="" class="form-control" placeholder="Email address" type="email">
+                    <input name="" class="form-control" placeholder="Email address" type="email" id="mail">
+                    <span id="mail_err"></span>
+                    
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                     </div>
-                    <!-- <select class="custom-select" style="max-width: 120px;">
-                        <option selected="">+971</option>
-                        <option value="1">+972</option>
-                        <option value="2">+198</option>
-                        <option value="3">+701</option>
-                    </select> -->
+                  
                     
-                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                    <input name="" class="form-control" placeholder="Phone number" type="text" id="ph">
+                    <span id="ph_err"></span>
                 </div> <!-- form-group// -->
-                <!-- <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                    </div>
-                    <select class="form-control">
-                        <option selected=""> Select job type</option>
-                        <option>Designer</option>
-                        <option>Manager</option>
-                        <option>Accaunting</option>
-                    </select>
-                </div> form-group end.// -->
+               
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Create password" type="password">
+                    <input class="form-control" placeholder="Create password" type="password" id="psw">
+                    <span id="psw_err"></span>
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Repeat password" type="password">
+                    <input class="form-control" placeholder="Repeat password" type="password" id="repsw">
+                    <span id="repsw_err"></span>
                 </div> <!-- form-group// -->                                      
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick="return validate()"> Create Account  </button>
                 </div> <!-- form-group// -->      
                 <p class="text-center">Have an account? <a href="{% url 'app:loginpage' %}">Log In</a> </p>                                                                 
             </form>
@@ -93,18 +83,10 @@
             
             </div> 
             <!--container end.//-->
+
+           
             
-            <!-- <br><br>
-            <article class="bg-secondary mb-3">  
-            <div class="card-body text-center">
-                <h3 class="text-white mt-3">Bootstrap 4 UI KIT</h3>
-            <p class="h5 text-white">Components and templates  <br> for Ecommerce, marketplace, booking websites 
-            and product landing pages</p>   <br>
-            <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com  
-             <i class="fa fa-window-restore "></i></a></p>
-            </div>
-            <br><br>
-            </article> -->
+            
     
 </body>
 </html>
