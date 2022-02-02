@@ -4,9 +4,11 @@ from . import views
 app_name ="app"
 
 urlpatterns = [
-    path('',views.home,name=''),
+    path('',views.home,name='home'),
     # path('login',views.log,name='login'),
     path('loginpage',views.login,name='loginpage'),
 
     path('signup',views.signup,name='signup'),
+
+   
 ]

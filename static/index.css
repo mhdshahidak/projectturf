@@ -1,5 +1,5 @@
 .page1{
-    background-color: rgb(43, 39, 39);
+    background-color: rgb(73, 175, 47);
     
 }
 .page2{
@@ -20,3 +20,7 @@ p{
 /* button:hover {
     background-color: rgb(80, 74, 74);
   } */
+  .links{
+    align-items: center!important;
+    
+  }

@@ -1,0 +1,64 @@
+/* .booking{
+    background: url(/static/images/field.jpg);
+   
+    background-attachment: fixed;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    
+} 
+.propic{
+ height: 80%;
+    width: 25%;
+    height:100px; 
+     margin-top: 20px;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+
+}
+.row{
+    background-color: cadetblue;
+    background-size: cover;
+    height: 50px;
+}  */
+
+
+.first{
+    background-color: cadetblue;
+    background-size: cover;
+    height: 50px;
+}
+.profile{
+    background: url(/static/images/turf3-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+    width: 100%;
+}
+.propic{
+    width: 240px;
+    height:40px;
+     margin-top: 20px;
+    margin-left: 120px;
+    margin-bottom:20px;
+    
+   
+}
+
+.footer{
+    background-color: cadetblue;
+    width: 100%;
+}
+.days{
+    display: grid;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background:#dfe6d4;
+    opacity: 100%;
+    text-align: center;
+    margin: 0 0 10px;
+
+}
+
