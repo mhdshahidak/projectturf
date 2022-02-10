@@ -20,6 +20,6 @@ from django.contrib.staticfiles.urls import static,staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app.urls')),
-    # path('',include('app.urls')),
+    path('owners/',include('owners.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()

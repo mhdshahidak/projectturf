@@ -1,14 +1,15 @@
-# from django.urls import path,include
-# from . import views
+from django.urls import path,include
+from . import views
 
-# app_name ="owners"
+app_name ="owners"
 
-# urlpatterns = [
-#     path('',views.register,name='register'),
+urlpatterns = [
+    path('register',views.register,name='register'),
     
-#     path('owelogin',views.owelogin,name='owelogin'),
+    path('owelogin',views.owelogin,name='owelogin'),
 
-#     # path('signup',views.signup,name='signup'),
+    path('booking',views.booking,name='booking'),
+
 
    
-# ]
+]

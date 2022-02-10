@@ -14,7 +14,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     top: 55%;
     left: 0;
     z-index: 1;
