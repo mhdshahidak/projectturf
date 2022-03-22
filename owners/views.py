@@ -2,6 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def register(request):
+    msg = ""
+    # if request.method == 'POST':
+
     return render(request,'register.html')
 
 def owelogin(request):

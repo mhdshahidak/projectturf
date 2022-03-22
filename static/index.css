@@ -5,9 +5,7 @@
 .page2{
     background-color: black;
 }
-p{
-    color: blanchedalmond;
-}
+
 
 .log{
     text-transform: uppercase;
@@ -17,20 +15,12 @@ p{
       
     
 }
-/* button:hover {
-    background-color: rgb(80, 74, 74);
-  } */
+
   .links{
     align-items: center!important;
     
   }
-  /* footer{
-      padding: 15px;
-      
-  }
-  .container{
-      padding-bottom: 30px;
-  } */
+  
   .homebody{
       padding: 20px;
   }

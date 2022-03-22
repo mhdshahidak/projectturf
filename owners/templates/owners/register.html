@@ -1,17 +1,20 @@
 {% extends 'index.html' %}
 
 {% block content%}
+<link href="/static/register.css" rel="stylesheet">
 
 <div class="row">
+<form action="" method="POST">
+    {% csrf_token %}
     <div class="form" style="height: 700px;">
-        <p>PARTNERSHIP FORM</p>
-        <form>
-    <input type="text" name="name" placeholder="name">
+        <p style="color: black;">PARTNERSHIP FORM</p>
+        
+    <input type="text" name="name" placeholder="name" >
     <input type="email" name="email" placeholder="Email id">
-    <input type="text" name="courtname" placeholder="Court Name">
-    <input type="password" name="password" placeholder="Password">
+    <input type="text" name="courtname" placeholder="Court Name" >
+    
    
-    <select name="sport-type" class="">
+    <select name="sport_type" class="">
 
        <option value>Choose Sport Type</option>
        <option value="Football">Football</option>
@@ -24,6 +27,8 @@
     <input type="number" name="contactnumber" placeholder="Contact Number">
     <input type="number" name="bookingnumber" placeholder="Booking Number">
     <input type="text" name="location" placeholder="Location">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="cpassword" placeholder="confirm Password">
     <button type="button" class="btn btn-success">Submit</button>
     </form>
     </div>

@@ -1,73 +1,41 @@
-
 {% extends 'index.html' %}
+{% block content %}
+{% load static %}
+    <link href="/static/register.css" rel="stylesheet">
+    <script src="/static/js/signup.js"></script>
+    
 
-{% block content%}
+    <div class="row">
+        <div class="form">
+            <p style="color: black;">
+                SIGNUP
+            </p>
+            <form method="POST" action="" onsubmit="return validate()">
+                {% csrf_token %}
+                <input type="text" id="name" placeholder="name" name="name">
+                <span id="name_err"></span>
+                <input type="email" id="email" placeholder="Email id" name="email">
+                <span id="email_err"></span>
+                <input type="number" id="phno" placeholder="phone number" name="phone">
+                <span id="ph_err"></span>
+                
+                <input type="radio" id="genter" name="genter" value="male" checked="true">
+                <label for="genter">MALE</label>
+                <input type="radio" id="genter" name="genter" value="female">
+                <label for="female">FEMALE</label>
+                <input type="password" id="password" placeholder="Password" name="password">
+                <span id="psw_err"></span>
+                <input type="password" id="cpsw" placeholder="Confirm password" name="cpassword">
+                <span id="cpsw_err"></span>
+                <button class="btn btn-success">Submit</button>
+                {{msg}}
+            </form>
+        </div>
+    </div>
 
    
 
-        <div class="card bg-light">
-            <article class="card-body mx-auto" style="max-width: 400px;">
-                <h4 class="card-title mt-3 text-center">Create Account</h4>
-                <p class="text-center">Get started with your free account</p>
-                <p>
-                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-                </p>
-                <p class="divider-text">
-                    <span class="bg-light">OR</span>
-                </p>
-                <form method="get" action="" >
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                     </div>
-                    <input name="" class="form-control" placeholder="Full name" type="text" id="fullname">
-                    <span id="name_err"></span>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                     </div>
-                    <input name="" class="form-control" placeholder="Email address" type="email" id="mail">
-                    <span id="mail_err"></span>
-                    
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                    </div>
-                  
-                    
-                    <input name="" class="form-control" placeholder="Phone number" type="text" id="ph">
-                    <span id="ph_err"></span>
-                </div> <!-- form-group// -->
-               
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Create password" type="password" id="psw">
-                    <span id="psw_err"></span>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Repeat password" type="password" id="repsw">
-                    <span id="repsw_err"></span>
-                </div> <!-- form-group// -->                                      
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block" onclick="return validate()"> Create Account  </button>
-                </div> <!-- form-group// -->      
-                <p class="text-center">Have an account? <a href="{% url 'app:loginpage' %}">Log In</a> </p>                                                                 
-            </form>
-            </article>
-            </div> <!-- card.// -->
-            
-            </div> 
-            <!--container end.//-->
 
-            {% endblock %}
-
-           
-            
+  
+    
+{% endblock %}

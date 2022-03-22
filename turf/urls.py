@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.staticfiles.urls import static,staticfiles_urlpatterns
+from django.conf.urls.static import static  # import media
+from django.conf import settings    # impot settings for media
 
 urlpatterns = [
     
     path('',include('app.urls')),
     path('owners/',include('owners.urls')),
-]
+    
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ 
 urlpatterns += staticfiles_urlpatterns()
