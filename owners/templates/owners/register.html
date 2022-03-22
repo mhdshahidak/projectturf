@@ -8,13 +8,13 @@
     {% csrf_token %}
     <div class="form" style="height: 700px;">
         <p style="color: black;">PARTNERSHIP FORM</p>
-        
+        {{msg}}
     <input type="text" name="name" placeholder="name" >
     <input type="email" name="email" placeholder="Email id">
     <input type="text" name="courtname" placeholder="Court Name" >
     
    
-    <select name="sport_type" class="">
+    <select name="sportstype" class="">
 
        <option value>Choose Sport Type</option>
        <option value="Football">Football</option>
@@ -29,7 +29,8 @@
     <input type="text" name="location" placeholder="Location">
     <input type="password" name="password" placeholder="Password">
     <input type="password" name="cpassword" placeholder="confirm Password">
-    <button type="button" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success" >Submit</button>
+    
     </form>
     </div>
 </div>
