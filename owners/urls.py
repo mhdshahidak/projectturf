@@ -1,15 +1,18 @@
-from django.urls import path,include
+from django.urls import path, include
 from . import views
 
-app_name ="owners"
+app_name = "owners"
 
 urlpatterns = [
-    path('register',views.register,name='register'),
-    
-    path('owelogin',views.owelogin,name='owelogin'),
+    path('', views.owelogin, name='owelogin'),
 
-    path('booking',views.booking,name='booking'),
+    path('register', views.register, name='register'),
 
+    path('booking', views.booking, name='booking'),
 
-   
+    path('turfhome', views.turfhome, name='turfhome'),
+
+    path('update', views.update, name='update'),
+
+    path('logout', views.logout, name='logout'),
 ]

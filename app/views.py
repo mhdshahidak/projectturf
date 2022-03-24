@@ -1,15 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from app.models import Customer
+from owners.models import Turf
 
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    turfs = Turf.objects.all()
+    return render(request,'home.html',{'turfs':turfs,})
 
-# def log(request):
-#     return render(request,'login.html')
 
 def login(request):
+    msg = ""
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user_exists = Customer.objects.filter(email=username,password=password)
+
+        if user_exists:
+            user_data = Customer.objects.get(email=username,password=password)
+            request.session['customer'] = user_data.customer_id
+            return redirect('app:userhome')
+        else:
+            msg = "username or password incorrect"
+            return render(request,'login.html',{'msg':msg, })
+
     return render(request,'login.html')
 
 def signup(request):

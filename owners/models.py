@@ -16,11 +16,6 @@ class Owners(models.Model):
     location = models.CharField(max_length=20)
     status = models.CharField(max_length=10 ,default='requested')
     password = models.CharField(max_length=30)
-    profile_image = models.ImageField(upload_to='profile/')
-    bg_image = models.ImageField(upload_to='background/')
-    first_image = models.ImageField(upload_to='turf/first')
-    second_image = models.ImageField(upload_to='turf/second')
-    third_image = models.ImageField(upload_to='turf/third')
 
     class Meta:
         db_table = 'owners'
@@ -45,3 +40,23 @@ class Booking(models.Model):
 
     class Meta:
         db_table = 'booking'
+
+class Turf(models.Model):
+    id = models.AutoField(primary_key=True)
+    owner_id = models.ForeignKey(Owners, on_delete=models.CASCADE)
+    profile_image = models.ImageField( upload_to='profile/')
+    bg_image = models.ImageField(upload_to='background/')
+    first_image = models.ImageField( upload_to='turf/')
+    second_image = models.ImageField(upload_to='turf/')
+    third_image = models.ImageField( upload_to='turf/')
+
+    class Meta:
+        db_table = 'turf'
+        
+
+
+
+
+
+
+

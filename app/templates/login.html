@@ -9,7 +9,8 @@
    
     <div class="form">
     <p class="login" style="color: black;">Login</p>
-    <form>
+    <form method="POST">
+    {% csrf_token %}
 <input type="text" name="username" placeholder="Username">
 <input type="password" name="password" placeholder="Password">
 <button>Login</button>

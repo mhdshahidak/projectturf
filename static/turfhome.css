@@ -1,0 +1,39 @@
+
+
+.first{
+    background-color: cadetblue;
+    background-size: cover;
+    height: 50px;
+}
+/* .profile{
+    
+    
+    background-attachment: fixed;
+    
+} */
+.propic{
+    width: 240px;
+    height:40px;
+    margin-top: 40px;
+    margin-left: 120px;
+    margin-bottom:40px;
+    
+   
+}
+
+.footer{
+    background-color: cadetblue;
+    width: 100%;
+}
+.days{
+    display: grid;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background:#dfe6d4;
+    opacity: 100%;
+    text-align: center;
+    margin: 0 0 10px;
+
+}
+
