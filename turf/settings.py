@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'app',
     'owners',
-    # 'learn',
+    'adminapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,9 +60,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # BASE_DIR/'owners/templates',
-            # BASE_DIR/'owners/templates',
-            BASE_DIR/'owners/templates/owners'
+
+            BASE_DIR/'owners/templates/owners',
+            BASE_DIR/'adminapp/templates/adminapp',
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {

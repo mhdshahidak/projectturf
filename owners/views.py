@@ -33,22 +33,26 @@ def register(request):
 
 def owelogin(request):
     msg = ""
-
+     
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
-        owner_exists = Owners.objects.filter(email=username, password=password).exists()
-
-        if owner_exists:
+        try:
             owner_data = Owners.objects.get(email=username, password=password)
-            request.session['owner'] = owner_data.owner_id
-            return redirect('owners:turfhome')
-        
-        else:
+
+            if owner_data.status=='approved':
+                request.session['owner'] = owner_data.owner_id
+                return redirect('owners:turfhome')
+            else:
+                msg = "Account Not Approved"
+                return render(request,'owelogin.html', {'msg':msg, })
+
+        except :
+           
             msg = "Username or Password incorrect"
             return render(request,'owelogin.html', {'msg':msg, })
-    
+        
     return render(request,'owelogin.html')
 
 def booking(request):

@@ -72,7 +72,8 @@
                     <button type="button" class="btn btn-light me-4">
                         <a class="log" href="{% url 'app:loginpage' %}" style="color: black;">Login</a>
                     </button>
-                    <form class="d-flex">
+                    <form class="d-flex" method="POST">
+                    {% csrf_token %}
                         <input class="form-control me-2"
                                type="search"
                                placeholder="Search your location"

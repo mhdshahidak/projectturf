@@ -53,3 +53,7 @@ def signup(request):
 def master(request):
     return render(request, 'master.html')
 
+
+def search(request):
+    
+    pass

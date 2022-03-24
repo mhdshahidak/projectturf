@@ -6,7 +6,7 @@
 <div class="row">
 <form action="" method="POST">
     {% csrf_token %}
-    <div class="form" style="height: 700px;">
+    <div class="form" style="height: 750px;">
         <p style="color: black;">PARTNERSHIP FORM</p>
         {{msg}}
     <input type="text" name="name" placeholder="name" >
@@ -29,9 +29,12 @@
     <input type="text" name="location" placeholder="Location">
     <input type="password" name="password" placeholder="Password">
     <input type="password" name="cpassword" placeholder="confirm Password">
-    <button type="submit" class="btn btn-success" >Submit</button>
+    <button type="submit" class="btn btn-success" >Submit</button><br>
+
+    Already have an account? <a href="{% url 'owners:owelogin' %}">Login</a>
     
     </form>
+    
     </div>
 </div>
 
