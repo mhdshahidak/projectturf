@@ -4,6 +4,7 @@ from django.db import models
 
 from app.models import Customer
 
+
 # Create your models here.
 class Owners(models.Model):
     owner_id = models.AutoField(primary_key=True)

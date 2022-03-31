@@ -5,13 +5,13 @@
     background-size: cover;
     height: 50px;
 }
-.profile{
+/* .profile{
     background: url(/static/images/turf3-2.jpg);
     background-size: cover;
     background-attachment: fixed;
     height: 400px;
     width: 100%;
-}
+} */
 .propic{
     width: 240px;
     height:40px;

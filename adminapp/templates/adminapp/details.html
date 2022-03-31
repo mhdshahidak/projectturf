@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Email</th>
+      <th scope="col">Court Name</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Location</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in owner %}
+    <tr>
+      <th scope="row">{{i.owner_id}}</th>
+      <td>{{i.email}}</td>
+      <td>{{i.court_name}}</td>
+      <td>{{i.phone_no}}</td>
+      <td>{{i.location}}</td>
+      <td>{{i.status}}</td>
+      <td><a  class="btn btn-success btn-sm" href="{% url 'adminapp:approve' i.owner_id %}">Activate</a></td>
+      <td><a  class="btn btn-warning btn-sm" href="{% url 'adminapp:DeActivate' i.owner_id %}">Deactivate</a></td>
+      <td><a  class="btn btn-danger btn-sm" href="{% url 'adminapp:delete' i.owner_id %}">Delete</a></td>    
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+</html>

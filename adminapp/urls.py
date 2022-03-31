@@ -12,4 +12,16 @@ urlpatterns = [
 
     path('logout',views.logout, name='logout'),
 
+    path('details',views.details, name='details'),
+
+    #path('Activate',views.Activate, name='Activate'),
+
+    path('DeActivate/<int:id>',views.Deactivate, name='DeActivate'),
+
+    path('delete/<int:id>',views.delete, name='delete'),
+
+
+
+
+
 ]

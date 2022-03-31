@@ -26,7 +26,7 @@
                     </div>
                     <div class="carousel-inner image_curve">
                         <div class="carousel-item active">
-                            <a href="#">
+                            <a href="{% url 'owners:booking' t.id t.owner_id.owner_id %}">
                                 <img src="{{t.first_image.url}}" class="d-block w-100" alt="...">
                             </a>
                             <div class="carousel-caption d-none d-md-block">
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <a href="#">
+                            <a href="{% url 'owners:booking' t.id t.owner_id.owner_id %}">
                                 <img src="{{t.second_image.url}}"
                                      class="d-block w-100"
                                      alt="...">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <a href="#">
+                            <a href="{% url 'owners:booking' t.id t.owner_id.owner_id %}">
                                 <img src="{{t.third_image.url}}"
                                      class="d-block w-100"
                                      alt="...">

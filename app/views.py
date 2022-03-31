@@ -1,12 +1,19 @@
 from django.shortcuts import redirect, render
 
 from app.models import Customer
-from owners.models import Turf
+from owners.models import Owners, Turf
 
 # Create your views here.
 def home(request):
-    turfs = Turf.objects.all()
-    return render(request,'home.html',{'turfs':turfs,})
+    try:
+        customer = Customer.objects.get(customer_id=request.session['customer'])
+        turfs = Turf.objects.filter(owner_id__status='approved')
+        return render(request,'home.html',{'turfs':turfs, 'customer':customer})
+
+    except Exception:
+
+        turfs = Turf.objects.all()
+        return render(request,'home.html',{'turfs':turfs,})
 
 
 def login(request):

@@ -36,3 +36,16 @@ def logout(request):
     del request.session['admin']
     request.session.flush()
     return redirect('adminapp:adminlogin')
+
+def details(request):
+    owners_dts = Owners.objects.all()
+    return render(request,'details.html',{'owner':owners_dts,})
+
+def Deactivate(request,id):
+    status = "DeActivate"
+    Owners.objects.filter(owner_id=id).update(status=status)
+    return redirect('adminapp:details')
+
+def delete(request):
+    pass
+

@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
+from app.models import Customer
 
 from owners.models import Owners, Turf
+from turf.decorators import auth_customer
 
 # Create your views here.
 def register(request):
@@ -55,8 +57,13 @@ def owelogin(request):
         
     return render(request,'owelogin.html')
 
-def booking(request):
-    return render(request,'booking.html')
+@auth_customer
+def booking(request, id, oid):
+    turf = Turf.objects.get(id=id)
+    #customer = Customer.objects.get(customer_id = cid)
+    owner = Owners.objects.get(owner_id=oid)
+
+    return render(request,'booking.html',{'turf':turf, 'owner':owner})
 
 def turfhome(request):
     try:
