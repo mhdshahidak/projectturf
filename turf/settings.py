@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'app',
     'owners',
     'adminapp',
+    'django_agenda',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

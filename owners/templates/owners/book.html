@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/static/book.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="formowe">
+                    <form method="POST" >
+                        {% csrf_token %}
+                        <table >
+                            <p>
+                                <b>Hai </b>  {{customer.name}}
+                            </p>
+                            
+                            <p hidden >
+                                <input type="number" value=" {{turf.id}}" readonly name="turf_id">
+                               
+                             </p>
+                             {{msg}}
+                            <tr >
+                                <th>Turf Name</th>
+                                <td >{{turf.owner_id.court_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Contact Number</th>
+                                <td>{{turf.owner_id.booking_no}}</td>
+                            </tr>
+                            <tr>
+                                <th>Place</th>
+                                <td>{{turf.owner_id.location}}</td>
+                            </tr>
+                            <tr>
+                                <th>Slote Time</th>
+                                <td ><input type="text" value="{{time}}" name="time" readonly style="border: none; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <th>Date</th>
+                                <td><input type="text" value="{{date}}" name="date" readonly style="border: none;  text-align: center;"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2">
+                                    <button>BOOK NOW!</button>
+                                </td>
+                            </tr>   
+                        </table>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+    </div>
+</body>
+</html>
