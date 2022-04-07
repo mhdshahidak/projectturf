@@ -5,7 +5,7 @@ from app.models import Customer
 
 from owners.models import Booking, Owners, Turf
 from turf.decorators import auth_customer, auth_owner
-from django.conf import settings
+from turf import settings
 from django.core.mail import send_mail
 
 # Create your views here.
@@ -77,7 +77,6 @@ def turfhome(request):
 
         turf = Owners.objects.get(owner_id=request.session['owner'])
 
-
         pics = Turf.objects.get(owner_id=request.session['owner'])
 
         return render(request, 'turf_home.html',{'turf':turf,'pics':pics})  
@@ -124,7 +123,7 @@ def book(request, id):
             customer_id = Customer.objects.get(customer_id=request.session['customer'])
             booking = Booking(turf_id=turf_id,user_id=customer_id,date=date,time=time,status=status)
             booking.save()
-            send_mail("Booking details details", " Your slote booked  successfully  ",
+            send_mail("Booking details ", " Your slote booked  successfully  ",
                     settings.EMAIL_HOST_USER, [str(customer_id.email)])
 
             send_mail("You got a booking", " You got a booking from a customer login for more details  ",

@@ -8,3 +8,4 @@ class AdminLog(models.Model):
     class Meta:
         db_table = 'adminlog'
         
+
