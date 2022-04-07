@@ -5,6 +5,8 @@ from app.models import Customer
 
 from owners.models import Booking, Owners, Turf
 from turf.decorators import auth_customer, auth_owner
+from django.conf import settings
+from django.core.mail import send_mail
 
 # Create your views here.
 def register(request):
@@ -107,8 +109,6 @@ def book(request, id):
     status = "Booked"
     time = request.GET['time']
     date = request.GET['dt']
-    # date = date[2], date[1], date[0]
-
     turf = Turf.objects.get(id=id)
     customer = Customer.objects.get(customer_id=request.session['customer'])
     # print(type(date))
@@ -117,15 +117,30 @@ def book(request, id):
         time = request.POST['time']
         date = request.POST['date']
 
-        turf_id = Turf.objects.get(id=id)
-        customer_id = Customer.objects.get(customer_id=request.session['customer'])
-        booking = Booking(turf_id=turf_id,user_id=customer_id,date=date,time=time,status=status)
-        booking.save()
-        return redirect('app:userhome')
+        slote_bkd = Booking.objects.filter(time=time, date=date, turf_id=turf).exists()
+        
+        if not slote_bkd:
+            turf_id = Turf.objects.get(id=id)
+            customer_id = Customer.objects.get(customer_id=request.session['customer'])
+            booking = Booking(turf_id=turf_id,user_id=customer_id,date=date,time=time,status=status)
+            booking.save()
+            send_mail("Booking details details", " Your slote booked  successfully  ",
+                    settings.EMAIL_HOST_USER, [str(customer_id.email)])
+
+            send_mail("You got a booking", " You got a booking from a customer login for more details  ",
+                    settings.EMAIL_HOST_USER, [str(turf_id.owner_id.email)])
+            return redirect('app:userhome')
+
+        else:
+            msg = "This slote does not exist"
+            return render(request, 'book.html',{'turf':turf,'customer':customer,'date':date,'time':time,'msg':msg})
 
     return render(request, 'book.html',{'turf':turf,'customer':customer,'date':date,'time':time})
 
 
+def owbookings(request):
+    bookings = Booking.objects.filter(turf_id__owner_id=request.session['owner'])
+    return render(request,'owbookings.html',{'bookings':bookings,})
      
 
 @auth_owner

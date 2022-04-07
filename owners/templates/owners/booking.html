@@ -1,10 +1,17 @@
 {% extends 'index.html' %}
 {% block content %}
+
+
+ <style>
+     button{
+         border: 0px;
+         border-radius: 50px;
+         /* width: 90px; */
+     }
+ </style>
     <link href="/static/booking.css" rel="stylesheet">
     <div class="container-fluid">
-        <!-- <div class="row first"></div> -->
-        <a  class="btn btn-warning  btn-md"href="{% url 'owners:clogout' %}" style="margin-top: 20px; margin-bottom: 10px;">Logut</a>
-
+        
         <div class="row profile">
             <div class="col-md-6 proarea"style="background: url({{turf.bg_image.url}});background-size: cover; height: 400px; width: 100%;">
                 <div class="propic">
@@ -18,50 +25,47 @@
         <!-- slotes -->
         <!-- 1 -->
         <div class="row days">
-            <table>  
-            {% for i in wrking_date %}
-
-                 <tr>
-                    <td>
-                    <div class="col-md-4 firstday ">
-                    </div>
-                    <div class="col-md-8" style="margin-top: 20px; margin-bottom: 20px;">
-                    
-                        <td >
+            <table style="margin-top: 40px;margin-left: 60px;margin-bottom: 30px;">  
+            {% for i in wrking_date %}                    
+                        {% comment %} <td > {% endcomment %}
+                        <tr>
+                        <td>
                         {{i}}
-                            <a href="/owners/book/{{turf.id}}?time=6.00-7.00&dt={{i}}"><button style="background-color: green;" type="submit" >6.00-7.00</button></a>
+                        </td>
+                        <td style="padding: 10px;">
+                            <a href="/owners/book/{{turf.id}}?time=6.00-7.00am&dt={{i}}"><button  type="submit" >6.00-7.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=7.00-8.00&dt={{i}} %}"><button style="background-color: red;">7.00-8.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=7.00-8.00am&dt={{i}}"><button >7.00-8.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=8.00-9.00&dt={{i}}"><button style="background-color: green;">8.00-9.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=8.00-9.00am&dt={{i}}"><button >8.00-9.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=9.00-10.00&dt={{i}}"><button style="background-color: green;">9.00-10.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=9.00-10.00am&dt={{i}}"><button >9.00-10.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=3.00-4.00&dt={{i}}"><button style="background-color: green;">3.00-4.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=3.00-4.00pm&dt={{i}}"><button >3.00-4.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=4.00-5.00&dt={{i}}"><button style="background-color: green;">4.00-5.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=4.00-5.00pm&dt={{i}}"><button >4.00-5.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=5.00-6.00&dt={{i}}"><button style="background-color: red;">5.00-6.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=5.00-6.00pm&dt={{i}}"><button >5.00-6.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=6.00-7.00&dt={{i}}"><button style="background-color: red;">6.00-7.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=6.00-7.00pm&dt={{i}}"><button>6.00-7.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=7.00-8.00&dt={{i}}"><button style="background-color: red;">7.00-8.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=7.00-8.00pm&dt={{i}}"><button >7.00-8.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=8.00-9.00&dt={{i}}"><button style="background-color: red;">8.00-9.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=8.00-9.00pm&dt={{i}}"><button >8.00-9.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=9.00-10.00&dt={{i}}"><button style="background-color: green;">9.00-10.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=9.00-10.00pm&dt={{i}}"><button >9.00-10.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=10.00-11.00&dt={{i}}"><button style="background-color: red;">10.00-11.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=10.00-11.00pm&dt={{i}}"><button >10.00-11.00</button></a>
                             &nbsp;
-                            <a href="/owners/book/{{turf.id}}?time=11.00-12.00&dt={{i}}"><button style="background-color: green;">11.00-12.00</button></a>
+                            <a href="/owners/book/{{turf.id}}?time=11.00-12.00pm&dt={{i}}"><button >11.00-12.00</button></a>
                           
                         </td>
                         
-                    </tr>  
+                    </tr>
+                      
                     {% endfor %}
-                  <tr>
+                  {% comment %} <tr> {% endcomment %}
                 </table>
-            </div> 
 
         </div>
         

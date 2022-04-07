@@ -3,6 +3,8 @@ from django.shortcuts import redirect, render
 from adminapp.models import AdminLog
 from owners.models import Owners, Turf
 from turf.decorators import auth_admin
+from django.conf import settings
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -38,6 +40,10 @@ def admin_home(request):
 def approve(request, id):
     status = "approved"
     Owners.objects.filter(owner_id=id).update(status=status)
+    owner = Owners.objects.get(owner_id=id)
+    send_mail("PLAY MANIA", " You get approved by Admin you can now login to your profile page ",settings.EMAIL_HOST_USER, [str(owner.email)])
+                    
+            
     return redirect('adminapp:adminhome')
 
 

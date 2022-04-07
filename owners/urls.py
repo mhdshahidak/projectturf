@@ -21,4 +21,7 @@ urlpatterns = [
 
     path('clogout', views.clogout, name='clogout'),
 
+    path('owbookings', views.owbookings, name='owbookings'),
+
+
 ]

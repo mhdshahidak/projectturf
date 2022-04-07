@@ -1,7 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from app.models import Customer
-from owners.models import Owners, Turf
+from owners.models import Booking, Owners, Turf
 
 # Create your views here.
 def home(request):
@@ -62,6 +63,19 @@ def master(request):
 
 
 def search(request):
-     
     pass
+
+def bookings(request):
+    bookings = Booking.objects.filter(user_id=request.session['customer'])
+    return render(request,'userbookings.html',{'booking':bookings,})
+
+def cancel(request,id):
+    Booking.objects.get(id=id).delete()
+    return redirect('app:bookings')
+
+def profile(request):
+    customer = Customer.objects.get(customer_id=request.session['customer'])
+    return render(request, 'profile.html',{'customer':customer,})
+
+
 

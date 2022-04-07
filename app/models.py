@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -13,3 +14,4 @@ class Customer(models.Model):
 
     class Meta:
         db_table = 'customer'
+
